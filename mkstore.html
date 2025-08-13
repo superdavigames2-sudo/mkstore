@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MK Store</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom font style for the bold headline */
+    .headline {
+      font-family: 'Arial Black', Arial, sans-serif;
+      letter-spacing: 0.03em;
+    }
+    .negrito {
+    font-weight: bold;
+}
+.logo {
+    display: block;
+    margin: 0 auto; /* Centraliza o logo horizontalmente */
+    text-align: center; /* Alinha o logo ao centro dentro do contêiner */
+}
+
+.container {
+    text-align: center; /* Centraliza conteúdo dentro do contêiner */
+}
+.header {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+}
+
+    /* Navbar link hover style */
+    nav a:hover {
+      color: #1d4ed8; /* Tailwind blue-700 */
+      font-weight: 600;
+    }
+    /* Search input focus style */
+    input[type="search"]:focus {
+      outline: 2px solid #3b82f6;
+      outline-offset: 1px;
+    }
+    /* Custom scrollbar for the product carousel */
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900 min-h-screen flex flex-col">
+
+  <!-- HEADER -->
+  <header class="border-b border-gray-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+
+      <!-- Left: Back arrow and Search -->
+      <div class="flex items-center space-x-4">
+        <button aria-label="Voltar" class="text-2xl font-bold hover:text-blue-600 transition-colors"><</button>
+
+        <form role="search" class="relative">
+          <input
+            type="search"
+            placeholder="O que você está buscando?"
+            aria-label="Busca"
+            class="border border-gray-400 rounded-full py-2 pl-4 pr-10 w-72 focus:ring-2 focus:ring-blue-500"
+          />
+          <button type="submit" aria-label="Buscar" class="absolute right-2 top-2.5 text-gray-600 hover:text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14z" />
+            </svg>
+          </button>
+        </form>
+      </div>
+
+      <!-- Center: Logo and free delivery text -->
+      <div class="flex flex-col items-center space-y-1">
+        <span class="negrito">FRETE GRÁTIS NA PRIMEIRA COMPRA!</span>
+        <div>
+          <img
+            src="logo.png"
+            alt="Logotipo estilizado letra G e Z com efeito grafitado colorido"
+            class="w-24 h-auto"
+            onerror="this.style.display='none'"
+          />
+        </div>
+      </div>
+      
+
+      <!-- Right: Login and Cart -->
+      <div class="flex items-center space-x-6">
+        <a href="#" class="flex items-center space-x-2 hover:text-blue-600 transition-colors" aria-label="Área do usuário - Faça login ou cadastre-se">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A7 7 0 1 1 18.878 17.8M15 11a3 3 0 1 0-6 0 3 3 0 0 0 6 0z" />
+          </svg>
+          <div class="text-xs text-right leading-tight">
+            <div class="font-semibold">Olá! Faça login</div>
+            <div class="text-gray-600">Ou cadastre-se</div>
+          </div>
+        </a>
+
+        <button aria-label="Carrinho de compras" class="relative group">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-800 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4" />
+            <circle cx="7" cy="21" r="1" />
+            <circle cx="17" cy="21" r="1" />
+          </svg>
+          <span class="absolute -top-1 -right-1 bg-green-500 rounded-full text-xs text-white font-bold w-5 h-5 flex items-center justify-center">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="max-w-7xl mx-auto px-4 py-2 border-t border-gray-300 flex justify-center space-x-8 text-xs font-semibold tracking-wide uppercase text-gray-700 select-none">
+      <a href="#" class="hover:text-blue-700 transition-colors">Página Inicial</a>
+      <a href="#" class="hover:text-blue-700 transition-colors">Produtos</a>
+      <a href="#" class="hover:text-blue-700 transition-colors">Contato</a>
+      <a href="#" class="hover:text-blue-700 transition-colors">Política de Reembolsos e Cancelamentos</a>
+
+    </nav>
+  </header>
+
+  <!-- HERO SECTION WITH LARGE BACKGROUND -->
+  <section class="relative w-full h-96 sm:h-[32rem] max-w-7xl mx-auto mt-4 px-4">
+    <img
+      src="https://www.kickgame.com/cdn/shop/articles/tn_banner.png?crop=center&height=2000&v=1681392051&width=2000"
+      alt="Tênis Nike Airmax TN em terreno coberto de neve com iluminação suave"
+      class="object-cover w-full h-full rounded-md shadow-lg"
+      onerror="this.style.display='none'"
+    />
+
+    <!-- Overlay with text center -->
+    <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center p-4 rounded-md">
+      <p class="text-white text-sm sm:text-base font-semibold mb-1 tracking-wider select-none">PRODUTOS À PRONTA ENTREGA</p>
+      <h1 class="headline text-white text-3xl sm:text-5xl font-extrabold uppercase leading-tight max-w-4xl select-none">
+        SEM TAXAÇÃO 
+      </h1>
+      <p class="text-white text-lg sm:text-xl mt-3 font-semibold select-none">GARANTA O SEU!</p>
+    </div>
+
+    <!-- Left and Right Arrows -->
+    <button aria-label="Voltar imagem anterior" class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-1 shadow">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+    <button aria-label="Ir para próxima imagem" class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-1 shadow">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  </section>
+
+  <!-- COOKIE INFO BAR -->
+  <div class="fixed bottom-0 left-0 right-0 bg-gray-100/95 border-t border-gray-300 text-center py-2 px-4 flex items-center justify-center max-w-full select-none">
+    <p class="text-xs text-gray-700 max-w-3xl">
+      Ao navegar por este site <strong>você aceita o uso de cookies</strong> para agilizar a sua experiência de compra.
+    </p>
+    <button
+      id="btnAcceptCookies"
+      class="ml-4 bg-black text-white text-xs font-bold py-1 px-4 rounded hover:bg-gray-900 transition-colors"
+      aria-label="Entendi - Aceitar uso de cookies"
+    >
+      ENTENDI
+    </button>
+  </div>
+
+  
+
+  <script>
+    // Cookie consent dismissal
+    document.getElementById('btnAcceptCookies').addEventListener('click', () => {
+      document.querySelector('div.fixed').style.display = 'none';
+    });
+  </script>
+<!-- CATEGORIAS SECTION -->
+
+  
+<!-- CATEGORIAS SECTION -->
+<section class="max-w-7xl mx-auto px-4 mt-12">
+    <h2 class="text-xl font-bold mb-6">Categorias</h2>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Card 1 -->
+      <div class="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col items-center text-center">
+        <img src="https://acdn-us.mitiendanube.com/stores/003/068/036/themes/toluca/2-slide-1726689430146-3320207196-930c2890dc30dc4a8bd53238a1b3c6421726689646-480-0.webp?1210531310" alt="TN 3" class="w-full h-64 object-contain mb-4">
+        <a href="#" class="bg-black text-white text-xs font-bold py-2 px-4 rounded hover:bg-gray-900">VER MODELOS</a>
+      </div>
+      <!-- Card 2 -->
+      <div class="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col items-center text-center">
+        <img src="https://acdn-us.mitiendanube.com/stores/003/068/036/themes/toluca/2-slide-1726688318855-4222997165-c7daef6c3fb45481b7357fe5eb672d3e1726688535-480-0.webp?1210531310" alt="Air Max 95" class="w-full h-64 object-contain mb-4">
+        <a href="#" class="bg-black text-white text-xs font-bold py-2 px-4 rounded hover:bg-gray-900">VER MODELOS</a>
+      </div>
+      <!-- Card 3 -->
+      <div class="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col items-center text-center">
+        <img src="https://acdn-us.mitiendanube.com/stores/003/068/036/themes/toluca/2-slide-1726718415734-5195083911-041375e9cd181dab930087cc1df8e5581726718633-480-0.webp?1210531310" alt="Air Max DN" class="w-full h-64 object-contain mb-4">
+
+        <a href="#" class="bg-black text-white text-xs font-bold py-2 px-4 rounded hover:bg-gray-900">VER MODELOS</a>
+      </div>
+      <!-- Card 4 -->
+      <div class="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col items-center text-center">
+        <img src="https://acdn-us.mitiendanube.com/stores/003/068/036/themes/toluca/2-slide-1726776121739-8334784915-10e63de2fa951c8a98106ca2bcae726d1726776341-480-0.webp?1210531310" alt="Air Max Drift" class="w-full h-64 object-contain mb-4">
+        <a href="#" class="bg-black text-white text-xs font-bold py-2 px-4 rounded hover:bg-gray-900">VER MODELOS</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="mt-24"> <!-- margem top grande -->
+    
+  </section>
+  
+  <section class="mt-12"> <!-- margem top grande -->
+
+  </section>
+
+  <section class="mt-12"> <!-- margem top grande -->
+   
+  </section>
+  
+</body>
+</html>
+
